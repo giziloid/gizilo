@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Gizilo</string>
+    <string name="title_splash_screen">Get things with GIZILO</string>
+    <string name="desc_splash_screen">Empower Your Diet with GIZILO. Scan Your Food and Explore Nutritional Information Effortlessly</string>
+    <string name="btn_splash_screen">Get Started</string>
 </resources>
