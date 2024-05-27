@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.registration.RegisterActivity"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+
+    <TextView
+        android:id="@+id/welcome_title"
+        style="@style/TextView.PoppinsSemiBold24spwhite"
+        android:layout_width="251dp"
+        android:layout_height="31dp"
+        android:text="@string/title_signup"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179" />
+
+    <TextView
+        android:id="@+id/register_desc"
+        style="@style/TextView.PoppinsRegular18spwhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_title"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <EditText
+        style="@style/EdiText.PoppinsRegular18spGrey"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_rectangle_outline"
+        android:hint="@string/enter_your_fullname"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <EditText
+        style="@style/EdiText.PoppinsRegular18spGrey"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_rectangle_outline"
+        android:hint="@string/enter_your_email"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="359dp" />
+
+    <EditText
+        style="@style/EdiText.PoppinsRegular18spGrey"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_rectangle_outline"
+        android:hint="@string/enter_your_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="429dp" />
+
+    <EditText
+        style="@style/EdiText.PoppinsRegular18spGrey"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_rectangle_outline"
+        android:hint="@string/confrim_password"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteY="508dp" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Button.PoppinsSemiBold20spDark"
+        android:layout_width="325dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:backgroundTint="@color/white"
+        android:text="@string/btn_register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tagline"
+        app:layout_constraintVertical_bias="0.0756
+" />
+
+    <TextView
+        style="@style/TextView.PoppinsBold18spwhite"
+        android:layout_width="240dp"
+        android:layout_height="24dp"
+        android:text="@string/signup_account"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="702dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextView.PoppinsBold18spBlue"
+        android:layout_width="88dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="64dp"
+        android:text="@string/signin"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="701dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

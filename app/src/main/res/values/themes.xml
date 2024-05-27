@@ -8,6 +8,47 @@
 
     <style name="Theme.Gizilo" parent="Theme.AppCompat.Light.DarkActionBar">
     </style>
+    
+    <style name="TextView"/>
+    <style name="TextView.PoppinsSemiBold24spwhite">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="TextView.PoppinsRegular18spwhite">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+
+
+    <style name="TextView.PoppinsBold18spwhite">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="TextView.PoppinsBold18spBlue">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+    
+    <style name="EdiText"/>
+    <style name="EdiText.PoppinsRegular18spGrey">
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="Button"/>
+    <style name="Button.PoppinsSemiBold20spDark">
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
 
 
 </resources>
