@@ -3,4 +3,13 @@
     <string name="title_splash_screen">Get things with GIZILO</string>
     <string name="desc_splash_screen">Empower Your Diet with GIZILO. Scan Your Food and Explore Nutritional Information Effortlessly</string>
     <string name="btn_splash_screen">Get Started</string>
+    <string name="btn_register">Register</string>
+    <string name="confrim_password">Confirm your password</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="enter_your_fullname">Enter your fullname</string>
+    <string name="signup_desc">Discover a healthier you with GIZILO</string>
+    <string name="title_signup">Welcome OnBoard</string>
+    <string name="signup_account">Already have an acount?</string>
+    <string name="signin">Sign in</string>
 </resources>
