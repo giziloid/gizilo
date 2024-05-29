@@ -19,4 +19,8 @@
     <string name="sign_up">Sign Up</string>
     <string name="about_us">About Us</string>
     <string name="logout">Logout</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_profile">Profile</string>
 </resources>
