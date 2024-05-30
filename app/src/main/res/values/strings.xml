@@ -23,4 +23,6 @@
     <string name="title_home">Home</string>
     <string name="title_camera">Camera</string>
     <string name="title_profile">Profile</string>
+    <string name="quote_expert">“Mereka yang berpikir bahwa mereka tidak punya waktu untuk makan sehat, cepat atau lambat harus menyiapkan diri untuk sakit.” – Edward Stanley</string>
+    <string name="desc_about_us">Aplikasi ini dibuat untuk memantau nutrisi yang kita masukkan ke dalam tubuh agar tetap terkontrol dengan baik. Membantu Anda memilih makanan yang sehat dan bergizi. Aplikasi ini dapat membantu Anda menemukan makanan yang sesuai dengan kebutuhan dan preferensi Anda. Membantu Anda mencapai tujuan kesehatan Anda. Aplikasi ini dapat membantu Anda melacak kemajuan Anda dan tetap termotivasi.</string>
 </resources>
