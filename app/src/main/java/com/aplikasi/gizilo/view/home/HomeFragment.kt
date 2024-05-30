@@ -1,5 +1,6 @@
 package com.aplikasi.gizilo.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,10 @@ class HomeFragment : Fragment() {
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+        binding.addBtnContribute.setOnClickListener {
+            val intent =  Intent(this@HomeFragment,addContributeActivity::class.java)
+            startActivity(intent)
         }
         return root
     }
