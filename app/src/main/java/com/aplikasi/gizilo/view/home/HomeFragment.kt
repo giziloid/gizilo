@@ -1,5 +1,6 @@
 package com.aplikasi.gizilo.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.aplikasi.gizilo.databinding.FragmentHomeBinding
+import com.aplikasi.gizilo.view.contribute.ContributeActivity
 
 class HomeFragment : Fragment() {
 
@@ -31,6 +33,10 @@ class HomeFragment : Fragment() {
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }
+        binding.addBtnContribute.setOnClickListener {
+            val intent =  Intent(requireActivity(),ContributeActivity::class.java)
+            startActivity(intent)
         }
         return root
     }
