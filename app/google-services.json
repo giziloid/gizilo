@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "985866910945",
+    "project_id": "gizilo-148cc",
+    "storage_bucket": "gizilo-148cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985866910945:android:a4e8d54da56376f7e18ba0",
+        "android_client_info": {
+          "package_name": "com.aplikasi.gizilo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985866910945-t3vkrfloes99gd5a00u24val9slpuknn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aplikasi.gizilo",
+            "certificate_hash": "71ebcbf563d2fe2d0b0fca44bf83a2a9862b4a10"
+          }
+        },
+        {
+          "client_id": "985866910945-pbt164dp0fk3agg7cn5pstmh553kb3ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLnckdvYfPYULPGVIIfnj-5pHEx7OgP4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985866910945-pbt164dp0fk3agg7cn5pstmh553kb3ek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
