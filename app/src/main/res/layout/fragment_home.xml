@@ -27,18 +27,6 @@
         tools:ignore="HardcodedText,TextSizeCheck" />
 
     <ImageView
-        android:id="@+id/add_btn_contribute"
-        android:layout_width="79dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="24dp"
-        android:src="@drawable/ic_add_contribute"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
-
-
-    <ImageView
         android:id="@+id/imageView4"
         android:layout_width="406dp"
         android:layout_height="256dp"
