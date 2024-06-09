@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.aplikasi.gizilo.databinding.FragmentDashboardBinding
+import com.aplikasi.gizilo.databinding.FragmentCameraBinding
 
 class CameraFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentCameraBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,13 +25,10 @@ class CameraFragment : Fragment() {
         val cameraViewModel =
             ViewModelProvider(this)[CameraViewModel::class.java]
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentCameraBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        cameraViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         return root
     }
 
