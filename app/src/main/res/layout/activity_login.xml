@@ -13,11 +13,12 @@
     <TextView
         android:id="@+id/textView"
         style="@style/TextView.PoppinsSemiBold24spwhite"
-        android:layout_width="191dp"
+        android:layout_width="wrap_content"
         android:layout_height="34dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
         android:text="@string/login_title"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -27,95 +28,58 @@
         android:layout_width="171dp"
         android:layout_height="170dp"
         android:src="@drawable/ic_woman_lookingat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="169dp" />
+        tools:layout_editor_absoluteY="92dp" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText4"
         style="@style/EdiText.PoppinsRegular18spGrey"
-        android:layout_width="354dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="43dp"
-        android:autofillHints=""
+        android:layout_width="275dp"
+        android:layout_height="47dp"
         android:background="@drawable/shape_rectangle_outline"
-        android:hint="@string/enter_your_email"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
+        android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:layout_editor_absoluteY="308dp"
         tools:ignore="MissingConstraints" />
 
+
     <EditText
+        android:id="@+id/editText5"
         style="@style/EdiText.PoppinsRegular18spGrey"
-        android:layout_width="354dp"
-        android:layout_height="50dp"
+        android:layout_width="275dp"
+        android:layout_height="47dp"
         android:layout_marginTop="28dp"
-        android:autofillHints=""
         android:background="@drawable/shape_rectangle_outline"
-        android:hint="@string/enter_your_password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/forget_Password"
-        style="@style/TextView.PoppinsSemiBold18pwhite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/forget_password"
+        android:hint="Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="530dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
     <Button
-        android:id="@+id/button_login"
-        style="@style/Button.PoppinsSemiBold20spDark"
-        android:layout_width="325dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginBottom="72dp"
+        style="Button.PoppinsSemiBold16spBlue"
+        android:layout_width="205dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="18dp"
         android:background="@drawable/shape_rectangle_big"
-        android:backgroundTint="@color/white"
-        android:text="@string/btn_login"
+        android:text="Masuk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="474dp"
+        android:layout_height="235dp"
+        android:rotation="180"
+        android:src="@drawable/sushi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagline"
-        app:layout_constraintVertical_bias="0.0756
-"
-        tools:ignore="UnknownIdInLayout" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
-    <TextView
-        style="@style/TextView.PoppinsBold18spwhite"
-        android:layout_width="240dp"
-        android:layout_height="24dp"
-        android:text="@string/login_question"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="660dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        style="@style/TextView.PoppinsBold18spBlue"
-        android:layout_width="88dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/sign_up"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="659dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

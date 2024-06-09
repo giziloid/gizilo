@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="372dp"
         android:text="@string/title_splash_screen"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
@@ -37,8 +38,8 @@
     <TextView
         android:id="@+id/tagline"
         style="@style/TextView.PoppinsRegular18spwhite"
-        android:layout_width="330dp"
-        android:layout_height="92dp"
+        android:layout_width="331dp"
+        android:layout_height="112dp"
         android:text="@string/desc_splash_screen"
         android:textAlignment="center"
         app:circularflow_radiusInDP="15"

@@ -31,13 +31,16 @@
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/poppins</item>
     </style>
+    <style name="TextView.PoppinsRegular20spBlack">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
     <style name="TextView.PoppinsRegular12spwhite">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/poppins</item>
     </style>
-
-
 
     <style name="TextView.PoppinsBold18spwhite">
         <item name="android:textColor">@color/white</item>
@@ -61,6 +64,12 @@
     <style name="Button"/>
     <style name="Button.PoppinsSemiBold20spDark">
         <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="Button.PoppinsSemiBold20spWhite">
+        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/poppins_semibold</item>
     </style>
