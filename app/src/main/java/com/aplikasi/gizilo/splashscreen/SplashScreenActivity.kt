@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.aplikasi.gizilo.R
-import com.aplikasi.gizilo.view.registration.RegisterActivity
+import com.aplikasi.gizilo.view.welcome.WelcomeActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -25,6 +25,6 @@ class SplashScreenActivity : AppCompatActivity() {
             insets
         }
 
-        Handler(Looper.getMainLooper()).postDelayed({ startActivity(Intent(this, RegisterActivity::class.java)) }, 3000)
+        Handler(Looper.getMainLooper()).postDelayed({ startActivity(Intent(this, WelcomeActivity::class.java)) }, 3000)
     }
 }

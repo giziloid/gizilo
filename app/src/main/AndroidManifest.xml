@@ -30,9 +30,6 @@
             android:name=".view.settings.AboutUsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.settings.SettingActivity"
-            android:exported="false" />
-        <activity
             android:name=".view.login.LoginActivity"
             android:exported="false" />
         <activity

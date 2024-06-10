@@ -16,6 +16,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "BASE_URL", "\"https://test.gizilo.com/\"")
     }
 
     buildTypes {
@@ -36,12 +37,11 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
 dependencies {
-    implementation(libs.firebase.auth)
-    implementation(libs.play.services.auth)
     val cameraxVersion = "1.3.3"
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -56,16 +56,24 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation (libs.circleimageview)
-    implementation("androidx.camera:camera-camera2:$cameraxVersion")
-    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
-    implementation("androidx.camera:camera-view:$cameraxVersion")
-<<<<<<< HEAD
-    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
-=======
 
-    implementation(libs.androidx.credentials)
-    implementation(libs.androidx.credentials.play.services.auth)
-    implementation(libs.googleid)
->>>>>>> 1548b3217024ad0369e6adcd2b4354ffa3a11e76
+    implementation(libs.camera.camera2)
+    implementation(libs.camera.lifecycle)
+    implementation(libs.androidx.camera.view)
+    implementation(libs.tensorflow.lite.task.vision)
+
+    implementation(libs.github.glide)
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.retrofit2.converter.gson)
+    implementation(libs.okhttp3.logging.interceptor)
+
+    implementation(libs.activity.ktx)
+    implementation(libs.lifecycle.extensions)
+
+    implementation(libs.datastore.preferences)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.androidx.paging.runtime.ktx)
+
 }

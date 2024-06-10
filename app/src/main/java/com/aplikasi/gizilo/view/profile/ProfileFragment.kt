@@ -69,12 +69,6 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        auth = Firebase.auth
-        val firebaseUser = auth.currentUser
-
-        if (firebaseUser != null) {
-            startActivity(Intent(requireActivity(), LoginActivity::class.java))
-        }
         binding.settingsButton.setOnClickListener {
             settingButtonClicked()
         }
@@ -83,7 +77,7 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         binding.logoutBtn.setOnClickListener {
-          signOut()
+
         }
         return root
     }
@@ -124,15 +118,6 @@ class ProfileFragment : Fragment() {
         } else {
             binding.aboutBtn.isClickable = true
             binding.logoutBtn.isClickable = true
-        }
-    }
-    private fun signOut(){
-        lifecycleScope.launch {
-            val credentialManager =  CredentialManager.create(requireActivity())
-            auth.signOut()
-            credentialManager.clearCredentialState(ClearCredentialStateRequest())
-            startActivity(Intent(requireActivity(), LoginActivity::class.java))
-            requireActivity().finish()
         }
     }
     override fun onDestroyView() {
