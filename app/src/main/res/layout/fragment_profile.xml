@@ -47,7 +47,7 @@
         android:clickable="true"
         android:focusable="true"
         android:visibility="gone"
-        android:src="@drawable/ic_aboutUs_Icon"
+        android:src="@drawable/ic_about_icon"
         android:stateListAnimator="@null"
         app:borderWidth="0dp"
         app:layout_constraintEnd_toEndOf="@+id/settings_button"

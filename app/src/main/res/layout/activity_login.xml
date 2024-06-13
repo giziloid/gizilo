@@ -34,31 +34,35 @@
         tools:layout_editor_absoluteY="92dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/et_email"
         style="@style/EdiText.PoppinsRegular18spGrey"
         android:layout_width="275dp"
         android:layout_height="47dp"
         android:background="@drawable/shape_rectangle_outline"
         android:hint="Email"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="308dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteY="308dp" />
 
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/et_password"
         style="@style/EdiText.PoppinsRegular18spGrey"
         android:layout_width="275dp"
         android:layout_height="47dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/shape_rectangle_outline"
         android:hint="Password"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
+        android:id="@+id/btn_login"
         style="Button.PoppinsSemiBold16spBlue"
         android:layout_width="205dp"
         android:layout_height="48dp"
@@ -67,7 +71,7 @@
         android:text="Masuk"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -81,5 +85,16 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

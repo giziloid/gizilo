@@ -7,24 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import androidx.credentials.ClearCredentialStateRequest
-import androidx.credentials.CredentialManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import com.aplikasi.gizilo.R
 import com.aplikasi.gizilo.databinding.FragmentProfileBinding
-import com.aplikasi.gizilo.view.login.LoginActivity
 import com.aplikasi.gizilo.view.settings.AboutUsActivity
-import com.google.firebase.Firebase
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
-import kotlinx.coroutines.launch
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
-    private lateinit var auth: FirebaseAuth
 
     private val rotateOpen: Animation by lazy {
         AnimationUtils.loadAnimation(
@@ -69,12 +60,6 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        auth = Firebase.auth
-        val firebaseUser = auth.currentUser
-
-        if (firebaseUser != null) {
-            startActivity(Intent(requireActivity(), LoginActivity::class.java))
-        }
         binding.settingsButton.setOnClickListener {
             settingButtonClicked()
         }
@@ -83,7 +68,7 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         binding.logoutBtn.setOnClickListener {
-          signOut()
+
         }
         return root
     }
@@ -124,15 +109,6 @@ class ProfileFragment : Fragment() {
         } else {
             binding.aboutBtn.isClickable = true
             binding.logoutBtn.isClickable = true
-        }
-    }
-    private fun signOut(){
-        lifecycleScope.launch {
-            val credentialManager =  CredentialManager.create(requireActivity())
-            auth.signOut()
-            credentialManager.clearCredentialState(ClearCredentialStateRequest())
-            startActivity(Intent(requireActivity(), LoginActivity::class.java))
-            requireActivity().finish()
         }
     }
     override fun onDestroyView() {
