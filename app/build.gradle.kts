@@ -42,6 +42,7 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -56,22 +57,18 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-//    implementation(libs.camera.camera2)
-//    implementation(libs.camera.lifecycle)
-//    implementation(libs.androidx.camera.view)
-//    implementation(libs.tensorflow.lite.task.vision)
+
 
     implementation(libs.github.glide)
     implementation(libs.retrofit2.retrofit)
     implementation(libs.retrofit2.converter.gson)
     implementation(libs.okhttp3.logging.interceptor)
 
-//    implementation(libs.activity.ktx)
+
 
     implementation(libs.datastore.preferences)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
-//
-//    implementation(libs.androidx.paging.runtime.ktx)
+
 
 }

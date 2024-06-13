@@ -5,6 +5,207 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".view.contribute.ContributeActivity">
+
+    <!-- Tombol Kembali -->
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_circle_big"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Tombol Simpan -->
+    <Button
+        android:id="@+id/button3"
+        style="@style/Button.PoppinsRegular18spDark"
+        android:layout_width="100dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:backgroundTint="@color/white"
+        android:text="Simpan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toEndOf="@+id/back_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ScrollView untuk membuat konten dapat digulir -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Bagian Gambar -->
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="131dp"
+                android:layout_height="115dp"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_rectangle_big"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="87dp" />
+
+            <!-- Bidang Input -->
+            <ImageButton
+                android:id="@+id/btn_camera"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_add_photo"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="167dp" />
+
+            <EditText
+                android:id="@+id/et_name_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Nama Produk"
+                android:background="@drawable/shape_rectangle_big"
+                android:padding="16dp"/>
+
+            <EditText
+                android:id="@+id/et_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Merek"
+                android:background="@drawable/shape_rectangle_big"
+                android:padding="16dp"/>
+
+            <EditText
+                android:id="@+id/et_composition"
+                android:layout_width="match_parent"
+                android:layout_height="97dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_rectangle_big"
+                android:hint="Komposisi"
+                android:padding="16dp" />
+
+            <!-- Bagian Nutrisi -->
+            <LinearLayout
+                android:id="@+id/nutrition_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical"
+                android:background="@drawable/shape_rectangle_big"
+                android:padding="16dp">
+
+                <!-- Judul Nutrisi -->
+                <TextView
+                    android:id="@+id/tv_nutrition_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nutrisi"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="16dp"/>
+
+                <!-- Bidang Input Nutrisi -->
+                <EditText
+                    android:id="@+id/et_nutrition_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_rectangle_big"
+                    android:padding="8dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Tombol Input dan OK -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp">
+
+                    <Button
+                        android:id="@+id/btn_input"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="input"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/btn_ok"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="OK"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Fakta Nutrisi -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
