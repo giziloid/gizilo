@@ -40,8 +40,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.firebase.auth)
-    implementation(libs.play.services.auth)
     val cameraxVersion = "1.3.3"
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -60,12 +58,5 @@ dependencies {
     implementation("androidx.camera:camera-camera2:$cameraxVersion")
     implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
     implementation("androidx.camera:camera-view:$cameraxVersion")
-<<<<<<< HEAD
     implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
-=======
-
-    implementation(libs.androidx.credentials)
-    implementation(libs.androidx.credentials.play.services.auth)
-    implementation(libs.googleid)
->>>>>>> 1548b3217024ad0369e6adcd2b4354ffa3a11e76
 }
