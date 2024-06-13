@@ -1,4 +1,4 @@
- <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,46 +20,52 @@
         app:srcCompat="@drawable/ic_salad_register" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/et_name"
         style="@style/EdiText.PoppinsRegular18spGrey"
         android:layout_width="333dp"
         android:layout_height="60dp"
         android:layout_marginTop="38dp"
         android:background="@drawable/shape_rectangle_outline"
         android:hint="Nama lengkap"
+        android:textAlignment="center"
+        android:inputType="text"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView12" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/et_email"
         style="@style/EdiText.PoppinsRegular18spGrey"
         android:layout_width="333dp"
         android:layout_height="60dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/shape_rectangle_outline"
         android:hint="Email"
+        android:textAlignment="center"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/et_name"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/et_password"
         style="@style/EdiText.PoppinsRegular18spGrey"
         android:layout_width="333dp"
         android:layout_height="60dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/shape_rectangle_outline"
         android:hint="Password"
+        android:textAlignment="center"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_register"
         style="@style/Button.PoppinsSemiBold20spDark"
         android:layout_width="205dp"
         android:layout_height="48dp"
@@ -68,7 +74,7 @@
         android:text="Daftar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -79,8 +85,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register"
         app:srcCompat="@drawable/sushi" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

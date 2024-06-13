@@ -26,4 +26,10 @@
     <string name="quote_expert">“Mereka yang berpikir bahwa mereka tidak punya waktu untuk makan sehat, cepat atau lambat harus menyiapkan diri untuk sakit.” – Edward Stanley</string>
     <string name="desc_about_us">Aplikasi ini dibuat untuk memantau nutrisi yang kita masukkan ke dalam tubuh agar tetap terkontrol dengan baik. Membantu Anda memilih makanan yang sehat dan bergizi. Aplikasi ini dapat membantu Anda menemukan makanan yang sesuai dengan kebutuhan dan preferensi Anda. Membantu Anda mencapai tujuan kesehatan Anda. Aplikasi ini dapat membantu Anda melacak kemajuan Anda dan tetap termotivasi.</string>
     <string name="your_web_client_id">985866910945-pbt164dp0fk3agg7cn5pstmh553kb3ek.apps.googleusercontent.com</string>
+    <string name="have_login">Selamat Anda Telah Login</string>
+    <string name="selamat_datang_di_gizilo">Selamat Datang di Gizilo</string>
+    <string name="pantau_asupan_harian_nutrisi_dirilo">pantau asupan harian nutrisi dirilo!!!</string>
+    <string name="masuk">Masuk</string>
+    <string name="daftar">Daftar</string>
+    <string name="home_fragment">Yuk Mulai Hidup Sehat</string>
 </resources>

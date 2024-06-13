@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -28,9 +29,6 @@
             android:label="@string/title_activity_main" />
         <activity
             android:name=".view.settings.AboutUsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.settings.SettingActivity"
             android:exported="false" />
         <activity
             android:name=".view.login.LoginActivity"
