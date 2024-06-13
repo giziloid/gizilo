@@ -4,7 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.aplikasi.gizilo.data.api.ApiService
 import com.aplikasi.gizilo.data.repository.Result
+import com.aplikasi.gizilo.data.response.LoginRequest
 import com.aplikasi.gizilo.data.response.LoginResponse
+import com.aplikasi.gizilo.data.response.RegisterRequest
 import com.aplikasi.gizilo.data.response.RegisterResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.Flow
@@ -33,12 +35,13 @@ class UserRepository private constructor(
     suspend fun logout() {
         userPreference.clearData()
     }
-    fun register(name:String,
+    fun register(username:String,
                  email:String,
                  password:String):LiveData<Result<RegisterResponse>> = liveData{
         emit(Result.Loading)
         try {
-            val response = apiService.doRegister(name,email,password)
+            val registerRequest = RegisterRequest(username,email,password)
+            val response = apiService.doRegister(registerRequest)
             emit(Result.Success(response))
         }catch (e: HttpException){
             val jsonInString = e.response()?.errorBody()?.string()
@@ -51,7 +54,8 @@ class UserRepository private constructor(
     fun login(email: String, password: String): LiveData<Result<LoginResponse>> = liveData {
         emit(Result.Loading)
         try {
-            val response = apiService.doLogin(email, password)
+            val loginResponse = LoginRequest(email, password)
+            val response = apiService.doLogin(loginResponse)
             emit(Result.Success(response))
         } catch (e: HttpException) {
             val jsonInString = e.response()?.errorBody()?.string()
