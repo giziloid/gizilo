@@ -5,7 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.aplikasi.gizilo.data.pref.UserRepository
 import com.aplikasi.gizilo.di.Injection
+import com.aplikasi.gizilo.view.contribute.ContributeViewModel
 import com.aplikasi.gizilo.view.login.LoginViewModel
+import com.aplikasi.gizilo.view.profile.ListViewModel
 import com.aplikasi.gizilo.view.register.RegisterViewModel
 import com.aplikasi.gizilo.view.welcome.WelcomeViewModel
 
@@ -20,6 +22,12 @@ class ViewModelFactory(private val repository: UserRepository): ViewModelProvide
             }
             modelClass.isAssignableFrom(WelcomeViewModel::class.java)->{
                 WelcomeViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(ListViewModel::class.java)->{
+                ListViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(ContributeViewModel::class.java)->{
+                ContributeViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

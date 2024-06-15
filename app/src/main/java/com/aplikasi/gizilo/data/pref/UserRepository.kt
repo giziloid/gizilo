@@ -4,13 +4,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.aplikasi.gizilo.data.api.ApiService
 import com.aplikasi.gizilo.data.repository.Result
+import com.aplikasi.gizilo.data.response.GetProductResponseItem
 import com.aplikasi.gizilo.data.response.LoginRequest
 import com.aplikasi.gizilo.data.response.LoginResponse
+import com.aplikasi.gizilo.data.response.PostProductResponse
 import com.aplikasi.gizilo.data.response.RegisterRequest
 import com.aplikasi.gizilo.data.response.RegisterResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.Flow
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.HttpException
+import java.io.File
 
 class UserRepository private constructor(
     private val apiService: ApiService,
@@ -35,15 +42,18 @@ class UserRepository private constructor(
     suspend fun logout() {
         userPreference.clearData()
     }
-    fun register(username:String,
-                 email:String,
-                 password:String):LiveData<Result<RegisterResponse>> = liveData{
+
+    fun register(
+        username: String,
+        email: String,
+        password: String
+    ): LiveData<Result<RegisterResponse>> = liveData {
         emit(Result.Loading)
         try {
-            val registerRequest = RegisterRequest(username,email,password)
+            val registerRequest = RegisterRequest(username, email, password)
             val response = apiService.doRegister(registerRequest)
             emit(Result.Success(response))
-        }catch (e: HttpException){
+        } catch (e: HttpException) {
             val jsonInString = e.response()?.errorBody()?.string()
             val errorBody = Gson().fromJson(jsonInString, ErrorResponse::class.java)
             val errorMessage = errorBody.message
@@ -65,12 +75,68 @@ class UserRepository private constructor(
         }
     }
 
+    fun addProduct(
+        imageFile: File,
+        name: String,
+        calories: String,
+        totalFat: String,
+        protein: String,
+        carbohydrates: String,
+        sugar: String,
+        sodium: String
+    ): LiveData<Result<PostProductResponse>> = liveData {
+           emit(Result.Loading)
+        val reqImage = imageFile.asRequestBody("image/jpeg".toMediaType())
+        val multipartImage = MultipartBody.Part.createFormData("images", imageFile.name, reqImage)
+        val reqName = name.toRequestBody("text/plain".toMediaType())
+        val reqCalories = calories.toRequestBody("text/plain".toMediaType())
+        val reqTotalFat = totalFat.toRequestBody("text/plain".toMediaType())
+        val reqProtein = protein.toRequestBody("text/plain".toMediaType())
+        val reqCarbohydrates = carbohydrates.toRequestBody("text/plain".toMediaType())
+        val reqSugar = sugar.toRequestBody("text/plain".toMediaType())
+        val reqSodium = sodium.toRequestBody("text/plain".toMediaType())
+
+        try {
+            val response = apiService.addProduct(
+                multipartImage,
+                reqName,
+                reqCalories,
+                reqTotalFat,
+                reqProtein,
+                reqCarbohydrates,
+                reqSugar,
+                reqSodium
+            )
+            emit(Result.Success(response))
+        } catch (e: HttpException) {
+            val jsonInString = e.response()?.errorBody()?.string()
+            val errorBody = Gson().fromJson(jsonInString, ErrorResponse::class.java)
+            val errorMessage = errorBody.message
+            emit(Result.Error(errorMessage.toString()))
+        }
+    }
+
+    fun getProducts(): LiveData<Result<List<GetProductResponseItem>>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.getProducts()
+            val nonNullist = response.getProductResponse?.mapNotNull { it } ?: emptyList()
+            emit(Result.Success(nonNullist))
+        }catch (e:HttpException){
+            val jsonInString = e.response()?.errorBody()?.string()
+            val errorBody = Gson().fromJson(jsonInString, ErrorResponse::class.java)
+            val errorMessage = errorBody.message
+            emit(Result.Error(errorMessage.toString()))
+        }
+    }
+
     companion object {
         @Volatile
         private var instance: UserRepository? = null
         fun clearDataFactory() {
             instance = null
         }
+
         fun getInstance(
             apiService: ApiService,
             userPreference: UserPreference
