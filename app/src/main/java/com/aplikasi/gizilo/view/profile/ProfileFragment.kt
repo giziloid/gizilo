@@ -8,14 +8,23 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.aplikasi.gizilo.R
 import com.aplikasi.gizilo.databinding.FragmentProfileBinding
+import com.aplikasi.gizilo.view.MainViewModel
+import com.aplikasi.gizilo.view.ViewModelFactory
 import com.aplikasi.gizilo.view.settings.AboutUsActivity
+import com.aplikasi.gizilo.view.welcome.WelcomeActivity
+import kotlinx.coroutines.launch
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
+    private val viewModel by viewModels<MainViewModel>{
+        ViewModelFactory.getInstance(requireActivity())
+    }
 
     private val rotateOpen: Animation by lazy {
         AnimationUtils.loadAnimation(
@@ -67,8 +76,14 @@ class ProfileFragment : Fragment() {
             val intent = Intent(requireActivity(), AboutUsActivity::class.java)
             startActivity(intent)
         }
+        binding.btnLainnya.setOnClickListener {
+            startActivity(Intent(requireActivity(), ListActivity::class.java))
+        }
         binding.logoutBtn.setOnClickListener {
-
+            lifecycleScope.launch {
+                viewModel.logout()
+            }
+            startActivity(Intent(requireActivity(), WelcomeActivity::class.java))
         }
         return root
     }
