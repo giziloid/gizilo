@@ -39,10 +39,14 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+        mlModelBinding = true
     }
 }
 
 dependencies {
+    implementation(libs.tensorflow.lite.support)
+    implementation(libs.tensorflow.lite.metadata)
+    implementation(libs.tensorflow.lite.gpu)
     val cameraxVersion = "1.3.4"
 
     implementation(libs.androidx.core.ktx)
