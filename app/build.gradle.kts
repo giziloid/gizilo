@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -42,6 +43,7 @@ android {
 }
 
 dependencies {
+    val cameraxVersion = "1.3.4"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -57,18 +59,18 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-
-
     implementation(libs.github.glide)
     implementation(libs.retrofit2.retrofit)
     implementation(libs.retrofit2.converter.gson)
     implementation(libs.okhttp3.logging.interceptor)
 
-
-
     implementation(libs.datastore.preferences)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 
+    implementation("androidx.camera:camera-camera2:$cameraxVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
+    implementation("androidx.camera:camera-view:$cameraxVersion")
+    implementation("androidx.exifinterface:exifinterface:1.3.7")
 
 }

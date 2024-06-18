@@ -33,5 +33,9 @@
     <string name="masuk">Masuk</string>
     <string name="daftar">Daftar</string>
     <string name="home_fragment">Yuk Mulai Hidup Sehat</string>
+    <string name="simpan">Simpan</string>
+    <string name="nutrisi">Nutrisi</string>
+    <string name="nama_produk">nama produk</string>
+    <string name="berat_total">Berat total</string>
 
 </resources>

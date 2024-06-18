@@ -1,6 +1,8 @@
 package com.aplikasi.gizilo.data.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class GetProductResponse(
 
@@ -8,6 +10,7 @@ data class GetProductResponse(
 	val getProductResponse: List<GetProductResponseItem?>? = null
 )
 
+@Parcelize
 data class GetProductResponseItem(
 
 	@field:SerializedName("images")
@@ -17,35 +20,35 @@ data class GetProductResponseItem(
 	val potassium: Double? = null,
 
 	@field:SerializedName("weight")
-	val weight: Int? = null,
+	val weight: Double? = null,
 
 	@field:SerializedName("created_at")
 	val createdAt: String? = null,
 
 	@field:SerializedName("calories")
-	val calories: Int? = null,
+	val calories: Double? = null,
 
 	@field:SerializedName("carbohydrate")
-	val carbohydrate: Int? = null,
+	val carbohydrate: Double? = null,
 
 	@field:SerializedName("sodium")
-	val sodium: Int? = null,
+	val sodium: Double? = null,
 
 	@field:SerializedName("proteins")
-	val proteins: Int? = null,
+	val proteins: Double? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null,
 
 	@field:SerializedName("fat")
-	val fat: Int? = null,
+	val fat: Double? = null,
 
 	@field:SerializedName("id")
 	val id: Int? = null,
 
 	@field:SerializedName("sugar")
-	val sugar: Int? = null,
+	val sugar: Double? = null,
 
 	@field:SerializedName("last_modified")
 	val lastModified: String? = null
-)
+):Parcelable

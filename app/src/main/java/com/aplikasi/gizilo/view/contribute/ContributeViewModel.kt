@@ -8,9 +8,10 @@ class ContributeViewModel(private val repository: UserRepository):ViewModel() {
     fun addProduct(images: File,
                    name: String,
                    calories: String,
-                   totalFat: String,
-                   protein: String,
-                   carbohydrates: String,
+                   fat: String,
+                   proteins: String,
+                   carbohydrate: String,
                    sugar: String,
-                   sodium: String) = repository.addProduct(images,name,calories,totalFat,protein,carbohydrates,sugar,sodium)
+                   sodium: String,
+                   weight: String) = repository.addProduct(images,name,calories,fat,proteins,carbohydrate,sugar,sodium, weight)
 }

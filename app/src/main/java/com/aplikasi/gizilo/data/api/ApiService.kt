@@ -1,6 +1,6 @@
 package com.aplikasi.gizilo.data.api
 
-import com.aplikasi.gizilo.data.response.GetProductResponse
+import com.aplikasi.gizilo.data.response.GetProductResponseItem
 import com.aplikasi.gizilo.data.response.LoginRequest
 import com.aplikasi.gizilo.data.response.LoginResponse
 import com.aplikasi.gizilo.data.response.PostProductResponse
@@ -28,16 +28,17 @@ interface ApiService {
     @Multipart
     @POST("products")
     suspend fun addProduct(
-        @Part file: MultipartBody.Part,
+        @Part imageFile: MultipartBody.Part,
         @Part("name") name: RequestBody,
         @Part("calories") calories: RequestBody,
-        @Part("total_fat") totalFat: RequestBody,
-        @Part("protein") protein: RequestBody,
-        @Part("carbohydrates") carbohydrates: RequestBody,
+        @Part("fat") fat: RequestBody,
+        @Part("proteins") proteins: RequestBody,
+        @Part("carbohydrate") carbohydrate: RequestBody,
         @Part("sugar") sugar: RequestBody,
-        @Part("sodium") sodium: RequestBody
+        @Part("sodium") sodium: RequestBody,
+        @Part("weight") weight: RequestBody
     ): PostProductResponse
 
     @GET("products")
-    suspend fun getProducts(): GetProductResponse
+    suspend fun getProducts(): List<GetProductResponseItem>
 }

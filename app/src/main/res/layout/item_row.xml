@@ -19,7 +19,7 @@
         android:background="@drawable/shape_rectangle_big">
 
         <ImageView
-            android:id="@+id/imgStory"
+            android:id="@+id/img_product"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
@@ -33,35 +33,38 @@
             tools:src="@tools:sample/avatars" />
 
 
-
         <TextView
-            android:id="@+id/titleStory"
-            android:layout_width="wrap_content"
+            android:id="@+id/name_product"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
             android:text="namaproduk"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:lines="2"
+            android:maxLines="2"
+            android:singleLine="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imgStory"
+            app:layout_constraintStart_toEndOf="@+id/img_product"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/descStory"
+            android:id="@+id/weight_product"
             android:layout_width="229dp"
             android:layout_height="23dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="8dp"
             android:maxLength="100"
             android:text="description"
             android:textSize="14sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imgStory"
-            app:layout_constraintTop_toBottomOf="@+id/titleStory" />
+            app:layout_constraintStart_toEndOf="@+id/img_product"
+            app:layout_constraintTop_toBottomOf="@+id/name_product" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
