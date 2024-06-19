@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="@+id/preview"
         app:layout_constraintTop_toBottomOf="@+id/btn_save"
         app:srcCompat="@drawable/ic_gallery"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,ImageContrastCheck" />
 
     <TextView
         android:id="@+id/tv_nutrisi"
@@ -71,54 +71,74 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/shape_rectangle_big"
         android:hint="@string/nama_produk"
+        android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nutrisi" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nutrisi"
+        tools:ignore="Autofill,TextContrastCheck" />
 
 
     <EditText
         android:id="@+id/et_weight"
         style="@style/EdiText.PoppinsRegular18spGrey"
-        android:layout_width="317dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="146dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/shape_rectangle_big"
         android:hint="@string/berat_total"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/et_potassium"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_nama_product"
+        tools:ignore="Autofill,TextFields,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/et_potassium"
+        style="@style/EdiText.PoppinsRegular18spGrey"
+        android:layout_width="146dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/potassium"
+        android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nama_product" />
+        app:layout_constraintTop_toBottomOf="@+id/et_nama_product"
+        tools:ignore="Autofill,MissingConstraints,TextContrastCheck" />
 
     <EditText
         android:id="@+id/et_calories"
         android:layout_width="146dp"
         android:layout_height="52dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/shape_rectangle_big"
-        android:hint="Calories total"
+        android:hint="@string/calories_total"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_weight"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_lemak"
         android:layout_width="146dp"
         android:layout_height="52dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/shape_rectangle_big"
-        android:hint="Lemak total"
+        android:hint="@string/lemak_total"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintHorizontal_bias="0.338"
         app:layout_constraintStart_toEndOf="@+id/et_calories"
-        app:layout_constraintTop_toBottomOf="@+id/et_weight"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/et_potassium"
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_protein"
@@ -126,27 +146,28 @@
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/shape_rectangle_big"
-        android:hint="Protein"
+        android:hint="@string/protein"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/et_karbohidrat"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_calories"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_karbohidrat"
         android:layout_width="146dp"
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="44dp"
         android:background="@drawable/shape_rectangle_big"
-        android:hint="Karbohidrat"
+        android:hint="@string/karbohidrat"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_lemak"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_gula"
@@ -154,32 +175,32 @@
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/shape_rectangle_big"
-        android:hint="Gula"
+        android:hint="@string/gula"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/et_sodium"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_protein"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_sodium"
         android:layout_width="146dp"
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="44dp"
         android:background="@drawable/shape_rectangle_big"
-        android:hint="Sodium"
+        android:hint="@string/sodium"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_karbohidrat"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/preview"
@@ -190,7 +211,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_place_holder" />
+        app:srcCompat="@drawable/ic_place_holder"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <ProgressBar
         android:id="@+id/progressBar"

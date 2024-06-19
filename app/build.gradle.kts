@@ -77,4 +77,6 @@ dependencies {
     implementation("androidx.camera:camera-view:$cameraxVersion")
     implementation("androidx.exifinterface:exifinterface:1.3.7")
 
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
+
 }

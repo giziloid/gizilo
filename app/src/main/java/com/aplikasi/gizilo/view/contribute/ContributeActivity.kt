@@ -126,9 +126,10 @@ class ContributeActivity : AppCompatActivity() {
             val sugar = binding.etGula.text.toString()
             val sodium = binding.etSodium.text.toString()
             val weight = binding.etWeight.text.toString()
+            val potassium = binding.etPotassium.text.toString()
 
             viewModel.addProduct(
-                imageFile,name,calories,fat,proteins,carbohydrate,sugar,sodium, weight
+                imageFile,name,calories,fat,proteins,carbohydrate,sugar,sodium, weight,potassium
             ).observe(this) { result ->
                 if (result != null) {
                     when (result) {

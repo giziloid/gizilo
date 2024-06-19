@@ -11,6 +11,7 @@ import com.aplikasi.gizilo.view.login.LoginViewModel
 import com.aplikasi.gizilo.view.profile.ProductViewModel
 import com.aplikasi.gizilo.view.profile.ProfileViewModel
 import com.aplikasi.gizilo.view.register.RegisterViewModel
+import com.aplikasi.gizilo.view.result.ResultViewModel
 import com.aplikasi.gizilo.view.welcome.WelcomeViewModel
 
 class ViewModelFactory(private val repository: UserRepository): ViewModelProvider.NewInstanceFactory() {
@@ -33,6 +34,9 @@ class ViewModelFactory(private val repository: UserRepository): ViewModelProvide
             }
             modelClass.isAssignableFrom(ProfileViewModel::class.java)->{
                 ProfileViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(ResultViewModel::class.java)->{
+                ResultViewModel(repository) as T
             }
 
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
