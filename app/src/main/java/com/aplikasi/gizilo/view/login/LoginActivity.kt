@@ -3,6 +3,7 @@ package com.aplikasi.gizilo.view.login
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -14,7 +15,6 @@ import com.aplikasi.gizilo.data.repository.Result
 import com.aplikasi.gizilo.databinding.ActivityLoginBinding
 import com.aplikasi.gizilo.view.MainActivity
 import com.aplikasi.gizilo.view.ViewModelFactory
-import com.aplikasi.gizilo.view.home.HomeFragment
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -29,16 +29,20 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
-            viewModel.login(email, password).observe(this) { result ->
-                when (result) {
+            viewModel.login(email, password).observe(this) {
+                when (it) {
                     is Result.Loading -> {
                         binding.progressBar.visibility = View.VISIBLE
                     }
                     is Result.Success -> {
                         binding.progressBar.visibility = View.GONE
+                        Log.e("Data Token", it.data.toString())
                         lifecycleScope.launch {
                             viewModel.saveLogin(true)
-                            result.data.error?.let {it1->viewModel.saveAuthToken(it1)}
+                            it.data.token?.let { token ->
+                                viewModel.saveAuthToken(token)
+                                Log.e("Data Token", token)
+                            }
                             val intent = Intent(this@LoginActivity,MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                             ViewModelFactory.clearInstance()
@@ -48,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                     is Result.Error -> {
                     binding.progressBar.visibility = View.GONE
-                        Toast.makeText(this, result.error, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, it.error, Toast.LENGTH_SHORT).show()
                     }
                 }
             }

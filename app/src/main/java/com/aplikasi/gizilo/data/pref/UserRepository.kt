@@ -5,6 +5,7 @@ import androidx.lifecycle.liveData
 import com.aplikasi.gizilo.data.api.ApiService
 import com.aplikasi.gizilo.data.repository.Result
 import com.aplikasi.gizilo.data.response.GetProductResponseItem
+import com.aplikasi.gizilo.data.response.GradeResponse
 import com.aplikasi.gizilo.data.response.LoginRequest
 import com.aplikasi.gizilo.data.response.LoginResponse
 import com.aplikasi.gizilo.data.response.PostProductResponse
@@ -79,33 +80,39 @@ class UserRepository private constructor(
         imageFile: File,
         name: String,
         calories: String,
-        totalFat: String,
-        protein: String,
-        carbohydrates: String,
+        fat: String,
+        proteins: String,
+        carbohydrate: String,
         sugar: String,
-        sodium: String
+        sodium: String,
+        weight: String,
+        potassium:String
     ): LiveData<Result<PostProductResponse>> = liveData {
            emit(Result.Loading)
         val reqImage = imageFile.asRequestBody("image/jpeg".toMediaType())
         val multipartImage = MultipartBody.Part.createFormData("images", imageFile.name, reqImage)
         val reqName = name.toRequestBody("text/plain".toMediaType())
         val reqCalories = calories.toRequestBody("text/plain".toMediaType())
-        val reqTotalFat = totalFat.toRequestBody("text/plain".toMediaType())
-        val reqProtein = protein.toRequestBody("text/plain".toMediaType())
-        val reqCarbohydrates = carbohydrates.toRequestBody("text/plain".toMediaType())
+        val reqFat = fat.toRequestBody("text/plain".toMediaType())
+        val reqProtein = proteins.toRequestBody("text/plain".toMediaType())
+        val reqCarbohydrate = carbohydrate.toRequestBody("text/plain".toMediaType())
         val reqSugar = sugar.toRequestBody("text/plain".toMediaType())
         val reqSodium = sodium.toRequestBody("text/plain".toMediaType())
+        val reqWeight = weight.toRequestBody("text/plain".toMediaType())
+        val reqPotassium = potassium.toRequestBody("text/plain".toMediaType())
 
         try {
             val response = apiService.addProduct(
                 multipartImage,
                 reqName,
                 reqCalories,
-                reqTotalFat,
+                reqFat,
                 reqProtein,
-                reqCarbohydrates,
+                reqCarbohydrate,
                 reqSugar,
-                reqSodium
+                reqSodium,
+                reqWeight,
+                reqPotassium
             )
             emit(Result.Success(response))
         } catch (e: HttpException) {
@@ -120,8 +127,7 @@ class UserRepository private constructor(
         emit(Result.Loading)
         try {
             val response = apiService.getProducts()
-            val nonNullist = response.getProductResponse?.mapNotNull { it } ?: emptyList()
-            emit(Result.Success(nonNullist))
+            emit(Result.Success(response))
         }catch (e:HttpException){
             val jsonInString = e.response()?.errorBody()?.string()
             val errorBody = Gson().fromJson(jsonInString, ErrorResponse::class.java)
@@ -129,7 +135,18 @@ class UserRepository private constructor(
             emit(Result.Error(errorMessage.toString()))
         }
     }
-
+    fun getProductGrade(name: String): LiveData<Result<GradeResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.getGrade(name)
+            emit(Result.Success(response))
+        } catch (e: HttpException) {
+            val jsonInString = e.response()?.errorBody()?.string()
+            val errorBody = Gson().fromJson(jsonInString, ErrorResponse::class.java)
+            val errorMessage = errorBody.message
+            emit(Result.Error(errorMessage.toString()))
+        }
+    }
     companion object {
         @Volatile
         private var instance: UserRepository? = null

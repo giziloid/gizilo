@@ -21,52 +21,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/settings_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/background"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/ic_setting_button"
-        android:stateListAnimator="@null"
-        app:borderWidth="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:rippleColor="#FFFFFF"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/logout_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/background"
-        android:clickable="true"
-        android:focusable="true"
-        android:visibility="gone"
-        android:src="@drawable/ic_about_icon"
-        android:stateListAnimator="@null"
-        app:borderWidth="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/settings_button"
-        app:layout_constraintTop_toBottomOf="@+id/settings_button" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/about_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/background"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_about_icon"
+        app:borderWidth="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_logout"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/background"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_logout_icon"
         android:stateListAnimator="@null"
         app:borderWidth="0dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@+id/logout_btn"
-        app:layout_constraintTop_toBottomOf="@+id/logout_btn" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
@@ -84,12 +66,11 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="480dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        android:background="@color/white">
-    </View>
+        app:layout_constraintTop_toBottomOf="@+id/textView6"></View>
 
     <ImageView
         android:id="@+id/imageView10"
@@ -108,12 +89,12 @@
         android:layout_width="380dp"
         android:layout_height="86dp"
         android:layout_marginTop="28dp"
-        android:textAlignment="center"
+        android:elevation="10dp"
         android:text="ingin tahu lebih banyak produk apa saja yang baik bagi tubuh bisa klik tombol dibawah ya!!!"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        android:elevation="10dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <Button

@@ -19,173 +19,209 @@
         android:src="@drawable/baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_save"
         style="@style/Button.PoppinsRegular18spDark"
         android:layout_width="100dp"
         android:layout_height="47dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/shape_rectangle_big"
         android:backgroundTint="@color/white"
-        android:text="Simpan"
+        android:text="@string/simpan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toEndOf="@+id/back_btn"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <!-- ScrollView untuk membuat konten dapat digulir -->
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <ImageView
+        android:id="@+id/btn_gallery"
+        android:layout_width="52dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="156dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toStartOf="@+id/preview"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save"
+        app:srcCompat="@drawable/ic_gallery"
+        tools:ignore="ContentDescription,MissingConstraints,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_nutrisi"
+        style="@style/TextView.PoppinsSemiBold20spwhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/nutrisi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/preview"
+        tools:ignore="MissingConstraints" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+    <EditText
+        android:id="@+id/et_nama_product"
+        style="@style/EdiText.PoppinsRegular18spGrey"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/nama_produk"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nutrisi"
+        tools:ignore="Autofill,TextContrastCheck" />
 
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="131dp"
-                android:layout_height="115dp"
-                android:layout_gravity="center"
-                android:background="@drawable/shape_rectangle_big"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="87dp" />
 
-            <ImageButton
-                android:id="@+id/btn_camera"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="-40dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_add_photo"
-                tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck"
-                tools:layout_editor_absoluteY="167dp" />
+    <EditText
+        android:id="@+id/et_weight"
+        style="@style/EdiText.PoppinsRegular18spGrey"
+        android:layout_width="146dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/berat_total"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/et_potassium"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_nama_product"
+        tools:ignore="Autofill,TextFields,TextContrastCheck" />
 
-            <EditText
-                android:id="@+id/et_name_product"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Nama Produk"
-                android:background="@drawable/shape_rectangle_big"
-                android:padding="16dp"/>
+    <EditText
+        android:id="@+id/et_potassium"
+        style="@style/EdiText.PoppinsRegular18spGrey"
+        android:layout_width="146dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/potassium"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_nama_product"
+        tools:ignore="Autofill,MissingConstraints,TextContrastCheck" />
 
-            <!-- Bagian Nutrisi -->
-            <LinearLayout
-                android:id="@+id/nutrition_section"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:orientation="vertical"
-                android:background="@drawable/shape_rectangle_big"
-                android:padding="16dp">
+    <EditText
+        android:id="@+id/et_calories"
+        android:layout_width="146dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/calories_total"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_weight"
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
-                <!-- Judul Nutrisi -->
-                <TextView
-                    android:id="@+id/tv_nutrition_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nutrisi"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:paddingBottom="16dp"/>
+    <EditText
+        android:id="@+id/et_lemak"
+        android:layout_width="146dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/lemak_total"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toEndOf="@+id/et_calories"
+        app:layout_constraintTop_toBottomOf="@+id/et_potassium"
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
-                <EditText
-                    android:id="@+id/et_nutrition_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/shape_rectangle_big"
-                    android:padding="8dp"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <EditText
+        android:id="@+id/et_protein"
+        android:layout_width="146dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/protein"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/et_karbohidrat"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_calories"
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
-                <!-- Tombol Input dan OK -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_marginBottom="16dp">
+    <EditText
+        android:id="@+id/et_karbohidrat"
+        android:layout_width="146dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/karbohidrat"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_lemak"
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
-                    <Button
-                        android:id="@+id/btn_input"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="input"
-                        android:layout_marginEnd="8dp"/>
+    <EditText
+        android:id="@+id/et_gula"
+        android:layout_width="146dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/gula"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/et_sodium"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_protein"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
-                    <Button
-                        android:id="@+id/btn_ok"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="OK"
-                        android:layout_marginStart="8dp"/>
-                </LinearLayout>
+    <EditText
+        android:id="@+id/et_sodium"
+        android:layout_width="146dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/shape_rectangle_big"
+        android:hint="@string/sodium"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_karbohidrat"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="Autofill,MissingConstraints,SpeakableTextPresentCheck" />
 
-                <!-- Fakta Nutrisi -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="8dp">
+    <ImageView
+        android:id="@+id/preview"
+        android:layout_width="162dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_place_holder"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="8dp">
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="8dp">
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="8dp">
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="8dp">
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="8dp">
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

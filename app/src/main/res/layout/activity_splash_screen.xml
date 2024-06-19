@@ -11,16 +11,17 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="450dp"
-        android:layout_height="450dp"
+        android:layout_width="374dp"
+        android:layout_height="411dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188"
+        app:layout_constraintVertical_bias="0.181"
         app:srcCompat="@drawable/ic_logo"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        app:flow_horizontalAlign="center"/>
 
     <TextView
         android:id="@+id/title_splashscreen"
