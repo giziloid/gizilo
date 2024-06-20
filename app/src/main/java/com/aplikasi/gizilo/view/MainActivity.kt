@@ -1,5 +1,6 @@
 package com.aplikasi.gizilo.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -39,7 +40,20 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
     }
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        handleIntent(intent)
+    }
 
+    private fun handleIntent(intent: Intent) {
+        val value = intent.getStringExtra("key")
+        if (value != null) {
+            val bundle = Bundle()
+            bundle.putString("key", value)
+            navController.navigate(R.id.navigation_profile, bundle)
+        }
+    }
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.aplikasi.gizilo.data.repository.Result
 import com.aplikasi.gizilo.data.response.GetProductResponseItem
 import com.aplikasi.gizilo.databinding.ActivityProductBinding
+import com.aplikasi.gizilo.view.MainActivity
 import com.aplikasi.gizilo.view.ViewModelFactory
 import com.aplikasi.gizilo.view.adapter.ProductAdapter
 import com.aplikasi.gizilo.view.contribute.ContributeActivity
@@ -48,7 +49,11 @@ class ProductActivity : AppCompatActivity() {
         observeData()
 
         binding.icArrow.setOnClickListener {
-            startActivity(Intent(this, ProfileFragment::class.java))
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("key", "value") // Ganti dengan data yang ingin dikirim
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
+            finish()
         }
     }
 
