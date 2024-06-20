@@ -15,56 +15,131 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="194dp"
         android:background="@drawable/shape_rectangle_big">
+
 
         <ImageView
             android:id="@+id/img_product"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
+            app:layout_constraintHorizontal_bias="0.057"
+            app:layout_constraintVertical_bias="0.34"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
-            card_view:layout_constraintVertical_bias="0.29"
             tools:ignore="ContentDescription"
             tools:src="@tools:sample/avatars" />
 
-
         <TextView
             android:id="@+id/name_product"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="49dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:text="namaproduk"
-            android:textSize="18sp"
-            android:textStyle="bold"
             android:lines="2"
             android:maxLines="2"
             android:singleLine="false"
+            android:text="namaproduk"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/img_product"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/weight_product"
-            android:layout_width="229dp"
-            android:layout_height="23dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="8dp"
+            android:id="@+id/calories_product"
+            android:layout_width="110dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
             android:maxLength="100"
-            android:text="description"
+            android:text="desc"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toStartOf="@+id/proteins_product"
+            app:layout_constraintHorizontal_bias="0.766"
+            app:layout_constraintStart_toEndOf="@+id/img_product"
+            app:layout_constraintTop_toBottomOf="@+id/name_product" />
+
+        <TextView
+            android:id="@+id/carbohydrate_product"
+            android:layout_width="110dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:maxLength="100"
+            android:text="desc"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toStartOf="@+id/fat_product"
+            app:layout_constraintHorizontal_bias="0.775"
+            app:layout_constraintStart_toEndOf="@+id/img_product"
+            app:layout_constraintTop_toBottomOf="@+id/calories_product" />
+
+        <TextView
+            android:id="@+id/sugar_product"
+            android:layout_width="110dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:maxLength="100"
+            android:text="desc"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/sodium_product"
+            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintStart_toEndOf="@+id/img_product"
+            app:layout_constraintTop_toBottomOf="@+id/carbohydrate_product"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <TextView
+            android:id="@+id/proteins_product"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:maxLength="100"
+            android:text="desc"
             android:textSize="14sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/img_product"
-            app:layout_constraintTop_toBottomOf="@+id/name_product" />
+            app:layout_constraintTop_toBottomOf="@+id/name_product"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/fat_product"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:maxLength="100"
+            android:text="desc"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/proteins_product"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/sodium_product"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:maxLength="100"
+            android:text="desc"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fat_product"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

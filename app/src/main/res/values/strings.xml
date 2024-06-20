@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">Gizilo</string>
-    <string name="title_splash_screen">Dapatkan hal baru dengan GIZILO</string>
-    <string name="desc_splash_screen">Perhatikan Pola Makan Anda dengan GIZILO. Pindai Makanan Anda dan Jelajahi Informasi Nutrisi dengan Mudah</string>
-    <string name="btn_splash_screen">Get Started</string>
+    <string name="title_splash_screen">Pantau Nutrisi Produk Kemasan Dengan Sekali Scan</string>
     <string name="btn_register">Register</string>
     <string name="confrim_password">Confirm your password</string>
     <string name="enter_your_password">Enter your password</string>
@@ -26,7 +24,6 @@
     <string name="quote_expert">“Mereka yang berpikir bahwa mereka tidak punya waktu untuk makan sehat, cepat atau lambat harus menyiapkan diri untuk sakit.” – Edward Stanley</string>
     <string name="desc_about_us">Aplikasi ini dibuat untuk memantau nutrisi yang kita masukkan ke dalam tubuh agar tetap terkontrol dengan baik. Membantu Anda memilih makanan yang sehat dan bergizi. Aplikasi ini dapat membantu Anda menemukan makanan yang sesuai dengan kebutuhan dan preferensi Anda. Membantu Anda mencapai tujuan kesehatan Anda.</string>
     <string name="your_web_client_id">985866910945-pbt164dp0fk3agg7cn5pstmh553kb3ek.apps.googleusercontent.com</string>
-
     <string name="have_login">Selamat Anda Telah Login</string>
     <string name="selamat_datang_di_gizilo">Selamat Datang di Gizilo</string>
     <string name="pantau_asupan_harian_nutrisi_dirilo">pantau asupan harian nutrisi dirilo!!!</string>
@@ -49,5 +46,9 @@
     <string name="sodium">Sodium</string>
     <string name="image_classifier_failed">Image classifier failed to initialize. See error logs for details</string>
     <string name="result">Hasil analisis</string>
+    <string name="result_a">Produk ini sehat untuk dikonsumsi karena di bawah 10% dari daily intake</string>
+    <string name="result_b">Produk ini cukup sehat untuk dikonsumsi karena di range 10-25% dari daily intake</string>
+    <string name="result_c">Produk ini kurang sehat untuk dikonsumsi karena di range 25-50% dari daily intake</string>
+    <string name="result_d">Produk ini tidak sehat untuk dikonsumsi karena di atas 50%  dari daily intake</string>
 
 </resources>

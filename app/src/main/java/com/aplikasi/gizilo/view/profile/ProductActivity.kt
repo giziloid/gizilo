@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.aplikasi.gizilo.data.repository.Result
 import com.aplikasi.gizilo.data.response.GetProductResponseItem
 import com.aplikasi.gizilo.databinding.ActivityProductBinding
-import com.aplikasi.gizilo.view.MainActivity
 import com.aplikasi.gizilo.view.ViewModelFactory
 import com.aplikasi.gizilo.view.adapter.ProductAdapter
 import com.aplikasi.gizilo.view.contribute.ContributeActivity
@@ -42,10 +41,12 @@ class ProductActivity : AppCompatActivity() {
         binding.rvStory.layoutManager = layoutManager
         val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
         binding.rvStory.addItemDecoration(itemDecoration)
+
         binding.fabAdd.setOnClickListener {
             startActivity(Intent(this, ContributeActivity::class.java))
         }
         observeData()
+
         binding.icArrow.setOnClickListener {
             startActivity(Intent(this, ProfileFragment::class.java))
         }
