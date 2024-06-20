@@ -25,7 +25,12 @@ class ProductAdapter : ListAdapter<GetProductResponseItem, ProductAdapter.MyView
         @SuppressLint("SetTextI18n")
         fun bind(list: GetProductResponseItem) {
             binding.nameProduct.text = list.name
-            binding.weightProduct.text = list.weight.toString()+" g"
+            binding.caloriesProduct.text = "Kalori "+ list.calories.toString()
+            binding.proteinsProduct.text = "Protein "+ list.proteins.toString()
+            binding.carbohydrateProduct.text = "Karbohidrat "+ list.carbohydrate.toString()
+            binding.fatProduct.text = "Lemak "+ list.fat.toString()
+            binding.sugarProduct.text ="Gula "+ list.sugar.toString()
+            binding.sodiumProduct.text = "Sodium "+ list.sodium.toString()
             Glide.with(itemView.context).load(list.images).into(binding.imgProduct)
         }
     }
